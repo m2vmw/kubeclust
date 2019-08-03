@@ -2,10 +2,10 @@
 - hosts: k8s_ca
   roles:
     -
-      role: githubixx.cfssl
+      role: m2vmw.cfssl
       tags: role-cfssl
     -
-      role: githubixx.kubernetes-ca
+      role: m2vmw.k8s-ca
       tags: [ role-kubernetes-ca, role-kubernetes-ca-etcd ]
 
 - hosts: etcd
