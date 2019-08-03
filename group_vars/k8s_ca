@@ -1,0 +1,54 @@
+# ===========
+# role-cfssl
+# ===========
+cfssl_os: darwin
+cfssl_owner: "{{ ansible_user }}"
+cfssl_group: everyone
+cfssl_checksum: sha256:43f94af7aea250ca5aa2711dea8b50b8fdff3b32e7f2147da3464d0386b3f2e4
+cfssljson_checksum: sha256:153cb1493dbd71741f27b2d336c529e75f20069337d856b9f981fc3fdade226d
+
+# ===================
+# role-kubernetes-ca
+# ===================
+k8s_ca_certificate_owner: "{{ ansible_user }}"
+k8s_ca_certificate_group: "everyone"
+ca_etcd_csr_names_c: "US"
+ca_etcd_csr_names_l: "San Francisco"
+ca_etcd_csr_names_ou: "CA"
+ca_etcd_csr_names_st: "California"
+ca_k8s_apiserver_csr_names_c: "US"
+ca_k8s_apiserver_csr_names_l: "San Francisco"
+ca_k8s_apiserver_csr_names_ou: "CA"
+ca_k8s_apiserver_csr_names_st: "California"
+etcd_csr_names_c: "US"
+etcd_csr_names_l: "San Francisco"
+etcd_csr_names_ou: "CA"
+etcd_csr_names_st: "California"
+k8s_apiserver_csr_names_c: "US"
+k8s_apiserver_csr_names_l: "San Francisco"
+k8s_apiserver_csr_names_ou: "CA"
+k8s_apiserver_csr_names_st: "California"
+k8s_admin_csr_names_c: "US"
+k8s_admin_csr_names_l: "San Francisco"
+k8s_admin_csr_names_ou: "CA"
+k8s_admin_csr_names_st: "California"
+k8s_worker_csr_names_c: "US"
+k8s_worker_csr_names_l: "San Francisco"
+k8s_worker_csr_names_ou: "CA"
+k8s_worker_csr_names_st: "California"
+k8s_kube_proxy_csr_names_c: "US"
+k8s_kube_proxy_csr_names_l: "San Francisco"
+k8s_kube_proxy_csr_names_ou: "US"
+k8s_kube_proxy_csr_names_st: "California"
+k8s_controller_manager_csr_names_c: "US"
+k8s_controller_manager_csr_names_l: "San Francisco"
+k8s_controller_manager_csr_names_ou: "CA"
+k8s_controller_manager_csr_names_st: "California"
+k8s_scheduler_csr_names_c: "US"
+k8s_scheduler_csr_names_l: "San Francisco"
+k8s_scheduler_csr_names_ou: "CA"
+k8s_scheduler_csr_names_st: "California"
+k8s_controller_manager_sa_csr_names_c: "US"
+k8s_controller_manager_sa_csr_names_l: "San Francisco"
+k8s_controller_manager_sa_csr_names_ou: "CA"
+k8s_controller_manager_sa_csr_names_st: "California"
