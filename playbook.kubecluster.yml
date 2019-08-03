@@ -1,5 +1,21 @@
 ---
-- hosts: all
+- hosts: k8s_ca
+  roles:
+    -
+      role: githubixx.cfssl
+      tags: role-cfssl
+    -
+      role: githubixx.kubernetes-ca
+      tags: [ role-kubernetes-ca, role-kubernetes-ca-etcd ]
+
+- hosts: etcd
+  become: yes
+  roles:
+    -
+      role: githubixx.etcd
+      tags: role-etcd
+
+- hosts: cluster
   become: yes
   roles:
     - docker

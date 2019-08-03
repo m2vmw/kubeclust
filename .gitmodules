@@ -1,0 +1,9 @@
+[submodule "roles/githubixx.etcd"]
+	path = roles/githubixx.etcd
+	url = https://github.com/githubixx/ansible-role-etcd
+[submodule "roles/m2vmw.cfssl"]
+	path = roles/m2vmw.cfssl
+	url = https://github.com/m2vmw/ansible-role-cfssl
+[submodule "roles/m2vmw.k8s-ca"]
+	path = roles/m2vmw.k8s-ca
+	url = https://github.com/m2vmw/ansible-role-kubernetes-ca

@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
     kubemaster.vm.provision "shell", path: "provision.sh"
     kubemaster.vm.provider "virtualbox" do |vb|
       vb.memory = "2048"
-      vb.cpus = 2
+      vb.cpus = 1
     end
   end
 
@@ -22,9 +22,21 @@ Vagrant.configure("2") do |config|
       worker.vm.provision "shell", path: "provision.sh"
       worker.vm.provider "virtualbox" do |vb|
         vb.memory = "2048"
-        vb.cpus = 2
+        vb.cpus = 1
       end
     end
   end
 
+  (1..1).each do |i|
+    config.vm.define "etcd#{i}" do |etcd|
+      etcd.vm.hostname = "etcd#{i}"
+      etcd.vm.box = "ubuntu/bionic64"
+      etcd.vm.network "private_network", ip: "192.168.99.3#{i}"
+      etcd.vm.provision "shell", path: "provision.sh"
+      etcd.vm.provider "virtualbox" do |vb|
+        vb.memory = "2048"
+        vb.cpus = 1
+      end
+    end
+  end
 end
