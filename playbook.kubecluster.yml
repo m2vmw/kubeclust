@@ -1,5 +1,11 @@
 ---
 - hosts: k8s_ca
+  vars:
+    cfssl_os: darwin
+    cfssl_owner: "{{ ansible_user }}"
+    cfssl_group: everyone
+    cfssl_checksum: sha256:43f94af7aea250ca5aa2711dea8b50b8fdff3b32e7f2147da3464d0386b3f2e4
+    cfssljson_checksum: sha256:153cb1493dbd71741f27b2d336c529e75f20069337d856b9f981fc3fdade226d
   roles:
     -
       role: m2vmw.cfssl
@@ -9,6 +15,9 @@
       tags: [ role-kubernetes-ca, role-kubernetes-ca-etcd ]
 
 - hosts: etcd
+  vars:
+    etcd_interface: enp0s8
+    etcd_ca_conf_directory: ~/k8s/certs
   become: yes
   roles:
     -
