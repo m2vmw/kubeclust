@@ -1,6 +1,6 @@
 ---
 - name:  Gather facts from all hosts
-  hosts: all
+  hosts: k8s_ca
   tasks:
   - name: Gather facts from controller
     setup:
@@ -17,6 +17,7 @@
     delegate_to: "{{ item }}"
     delegate_facts: True
     loop: "{{ groups['etcd'] }}"
+  tags: always
 
 - hosts: k8s_ca
   roles:
