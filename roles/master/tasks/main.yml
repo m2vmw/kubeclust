@@ -9,7 +9,7 @@
   ignore_errors: true
 
 - name: Initialise Master node
-  command: kubeadm init --apiserver-advertise-address=192.168.99.20 --pod-network-cidr=192.168.0.0/16
+  command: kubeadm init --apiserver-advertise-address=192.168.99.20 --pod-network-cidr=192.168.0.0/16 --ignore-preflight-errors=NumCPU
   register: kubeadm_output
 
 - name: Create .kube directory
